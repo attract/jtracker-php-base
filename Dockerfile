@@ -43,9 +43,12 @@ COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 # ZipArchive:
 #####################################
 
-# Install the zip extension
 RUN pecl install zip && \
     docker-php-ext-enable zip
+
+#####################################
+# Composer:
+#####################################
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
