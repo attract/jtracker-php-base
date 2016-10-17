@@ -26,20 +26,6 @@ RUN apt-get purge --auto-remove -y zlib1g-dev \
         && docker-php-ext-install imap
 
 #####################################
-# xDebug:
-#####################################
-
-ARG INSTALL_XDEBUG=false
-RUN if [ ${INSTALL_XDEBUG} = true ]; then \
-    # Install the xdebug extension
-    pecl install xdebug && \
-    docker-php-ext-enable xdebug \
-;fi
-
-# Copy xdebug configration for remote debugging
-COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
-
-#####################################
 # ZipArchive:
 #####################################
 
