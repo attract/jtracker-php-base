@@ -37,8 +37,3 @@ RUN pecl install zip && \
 #####################################
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-COPY ./composer.json /var/www/project/composer.json
-
-ENV COMPOSER_ALLOW_SUPERUSER 1
-RUN /var/www/composer install
