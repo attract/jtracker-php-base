@@ -51,16 +51,6 @@ RUN pecl install zip && \
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 #####################################
-# Non-Root User:
-#####################################
-
-# Add a non-root user to prevent files being created with root permissions on host machine.
-ARG PUID=1000
-ARG PGID=1000
-RUN groupadd -g $PGID laradock && \
-    useradd -u $PUID -g laradock -m laradock
-
-#####################################
 # Set Timezone
 #####################################
 
