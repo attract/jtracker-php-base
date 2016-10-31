@@ -23,7 +23,8 @@ RUN docker-php-ext-install pdo_mysql
 RUN apt-get purge --auto-remove -y zlib1g-dev \
         && apt-get -y install libssl-dev libc-client2007e-dev libkrb5-dev \
         && docker-php-ext-configure imap --with-imap-ssl --with-kerberos \
-        && docker-php-ext-install imap opcache
+        && docker-php-ext-install imap \
+        && docker-php-ext-install opcache
 
 #####################################
 # OpCahce
