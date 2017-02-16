@@ -12,7 +12,8 @@ RUN apt-get update && \
         libfreetype6-dev \
         libssl-dev \
         libmcrypt-dev \
-        git
+        git \
+        mysql-client
 
 # Install the PHP mcrypt extention
 RUN docker-php-ext-install mcrypt
