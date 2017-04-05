@@ -43,7 +43,7 @@ RUN { \
 # ZipArchive:
 #####################################
 
-RUN pecl install zip && \
+RUN docker-php-ext-install zip && \
     docker-php-ext-enable zip
 
 #####################################
